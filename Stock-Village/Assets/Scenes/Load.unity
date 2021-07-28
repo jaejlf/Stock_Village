@@ -326,6 +326,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   LoadSlider: {fileID: 424926088}
   stockList: {fileID: 11400000, guid: 50551ee8215caea4180d40a69a925c4f, type: 2}
+  api: {fileID: 11400000, guid: 866976f8fbb2d7240b4f862f7ae18722, type: 2}
 --- !u!4 &904875849
 Transform:
   m_ObjectHideFlags: 0

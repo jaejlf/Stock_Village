@@ -17,6 +17,7 @@ public class LoadControl : MonoBehaviour
     float count = 0; //불러올 종목 정보 개수
     public Slider LoadSlider; //로딩바
     public StockList stockList; //주식 정보 저장 객체
+    public API api;
 
     //주식 종목 코드 배열
     List<string> symbolList = new List<string>() { "MSFT" }; //"GOOGL", "SBUX", "PYPL" };
@@ -87,7 +88,7 @@ public class LoadControl : MonoBehaviour
             RequestUri = new Uri("https://apidojo-yahoo-finance-v1.p.rapidapi.com/stock/v2/get-summary?symbol=" + symbol + "&region=US"),
             Headers =
     {
-        { "x-rapidapi-key", ""}, //input your yahoo finance api key
+        { "x-rapidapi-key", api.key },
         { "x-rapidapi-host", "apidojo-yahoo-finance-v1.p.rapidapi.com" },
     },
         };
