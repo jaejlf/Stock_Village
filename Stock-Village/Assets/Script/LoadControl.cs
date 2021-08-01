@@ -14,7 +14,7 @@ public class LoadControl : MonoBehaviour
 {
     IEnumerator coroutine1;
 
-    float count = 0; //불러올 종목 정보 개수
+    int count = 0; //불러올 종목 정보 개수
     public Slider LoadSlider; //로딩바
     public StockList stockList; //주식 정보 저장 객체
     public API api;
@@ -100,33 +100,33 @@ public class LoadControl : MonoBehaviour
 
             //current price
             string tmp_cp = (string)obj["financialData"]["currentPrice"]["raw"];
-            float.TryParse(tmp_cp, out float cp);
+            double.TryParse(tmp_cp, out double cp);
 
             //dividened date
             string dd = (string)obj["calendarEvents"]["dividendDate"]["fmt"];
 
             //dividened rate
             string tmp_dr = (string)obj["summaryDetail"]["dividendRate"]["raw"];
-            float.TryParse(tmp_dr, out float dr);
+            double.TryParse(tmp_dr, out double dr);
 
             //sector
             string sec = (string)obj["summaryProfile"]["sector"];
 
             //market cap
             string tmp_mc = (string)obj["price"]["marketCap"]["raw"];
-            float.TryParse(tmp_mc, out float mc);
+            double.TryParse(tmp_mc, out double mc);
 
             //PER
             string tmp_per = (string)obj["summaryDetail"]["forwardPE"]["raw"];
-            float.TryParse(tmp_per, out float per);
+            double.TryParse(tmp_per, out double per);
 
             //52 week change
             string tmp_wc = (string)obj["defaultKeyStatistics"]["52WeekChange"]["raw"];
-            float.TryParse(tmp_wc, out float wc);
+            double.TryParse(tmp_wc, out double wc);
 
             //previous close
             string tmp_pc = (string)obj["price"]["regularMarketPreviousClose"]["raw"];
-            float.TryParse(tmp_pc, out float pc);
+            double.TryParse(tmp_pc, out double pc);
 
             count++;
 

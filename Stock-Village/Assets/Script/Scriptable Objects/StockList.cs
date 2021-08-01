@@ -10,16 +10,16 @@ public class StockList : ScriptableObject
     public Dictionary<string, APIData> apiInfo = new Dictionary<string, APIData>();
     public class APIData //API에서 불러온 데이터 return 하기 위한 클래스
     {
-        public float api_marketprice; //현재 시가
+        public double api_marketprice; //현재 시가
         public string api_divDate; //배당일
-        public float api_divRate; //배당률
+        public double api_divRate; //배당률
         public string api_sector; //관련 업종별 분류
-        public float api_marketcap; //시가총액
-        public float api_per; //PER
-        public float api_52week; //시가 성장 변화(52 week change)
-        public float api_preclose; //이전 마감가
+        public double api_marketcap; //시가총액
+        public double api_per; //PER
+        public double api_52week; //시가 성장 변화(52 week change)
+        public double api_preclose; //이전 마감가
 
-        public APIData(float api_marketprice, string api_divDate, float api_divRate, string api_sector, float api_marketcap, float api_per, float api_52week, float api_preclose)
+        public APIData(double api_marketprice, string api_divDate, double api_divRate, string api_sector, double api_marketcap, double api_per, double api_52week, double api_preclose)
         {
             this.api_marketprice = api_marketprice;
             this.api_divDate = api_divDate;
@@ -31,7 +31,7 @@ public class StockList : ScriptableObject
             this.api_preclose = api_preclose;
         }
     }
-    public void add(string code, float send_price, string send_divdate, float send_divrate, string send_sector, float send_marketcap, float send_per, float send_52, float send_preclose)
+    public void add(string code, double send_price, string send_divdate, double send_divrate, string send_sector, double send_marketcap, double send_per, double send_52, double send_preclose)
     {
         apiInfo.Add(code, new APIData(send_price, send_divdate, send_divrate, send_sector, send_marketcap, send_per, send_52, send_preclose));
     }

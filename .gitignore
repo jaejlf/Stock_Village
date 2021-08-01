@@ -405,10 +405,7 @@ Stock-Village/[Ll]ogs/
 Stock-Village/[Uu]ser[Ss]ettings/
 
 # Asset Files
-Stock-Village/[Aa]ssets/Clean Settings UI/
-Stock-Village/[Aa]ssets/POLYGON city pack/
-Stock-Village/[Aa]ssets/SimpleTown/
-Stock-Village/[Aa]ssets/Buildings/
+Stock-Village/[Aa]ssets/protected
 
 # MemoryCaptures can get excessive in size.
 # They also could contain extremely sensitive data
