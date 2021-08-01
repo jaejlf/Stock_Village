@@ -23254,17 +23254,11 @@ MonoBehaviour:
   stockList: {fileID: 11400000, guid: 50551ee8215caea4180d40a69a925c4f, type: 2}
   myPortfolio: {fileID: 11400000, guid: 833675e2502fa674fb781326cebf2a5d, type: 2}
   totalGain: {fileID: 236003115}
-  mystockCk: {fileID: 1923712808}
-  tog0: {fileID: 168479241}
-  totalMode: []
-  portfolioMode: []
-  others: []
-  weather: {fileID: 1287933833}
-  tog1: {fileID: 292152729}
-  mktime: {fileID: 2043115966}
-  tog2: {fileID: 2040733086}
   scale: {fileID: 730232307}
-  tog3: {fileID: 54450060}
+  totalMode:
+  - {fileID: 868868522}
+  - {fileID: 1579628088}
+  portfolioMode: []
 --- !u!1001 &545360549
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -31500,6 +31494,7 @@ GameObject:
   m_Component:
   - component: {fileID: 730232306}
   - component: {fileID: 730232307}
+  - component: {fileID: 730232308}
   m_Layer: 0
   m_Name: scale
   m_TagString: Untagged
@@ -31575,8 +31570,42 @@ MonoBehaviour:
   m_Group: {fileID: 0}
   onValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 730232308}
+        m_TargetAssemblyTypeName: toggleCtrl, Assembly-CSharp
+        m_MethodName: toggle_scale
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_IsOn: 0
+--- !u!114 &730232308
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 730232305}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1491fd393936ea47aef2a902918b020, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stockList: {fileID: 11400000, guid: 50551ee8215caea4180d40a69a925c4f, type: 2}
+  myPortfolio: {fileID: 11400000, guid: 833675e2502fa674fb781326cebf2a5d, type: 2}
+  mystockCk: {fileID: 1923712808}
+  tog0: {fileID: 168479241}
+  weather: {fileID: 1287933833}
+  tog1: {fileID: 292152729}
+  mktime: {fileID: 2043115966}
+  tog2: {fileID: 2040733086}
+  scale: {fileID: 730232307}
+  tog3: {fileID: 54450060}
 --- !u!33 &730433795
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -52465,6 +52494,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1287933832}
   - component: {fileID: 1287933833}
+  - component: {fileID: 1287933834}
   m_Layer: 0
   m_Name: weather
   m_TagString: Untagged
@@ -52540,8 +52570,42 @@ MonoBehaviour:
   m_Group: {fileID: 0}
   onValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1287933834}
+        m_TargetAssemblyTypeName: toggleCtrl, Assembly-CSharp
+        m_MethodName: toggle_weather
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_IsOn: 0
+--- !u!114 &1287933834
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1287933831}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1491fd393936ea47aef2a902918b020, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stockList: {fileID: 11400000, guid: 50551ee8215caea4180d40a69a925c4f, type: 2}
+  myPortfolio: {fileID: 11400000, guid: 833675e2502fa674fb781326cebf2a5d, type: 2}
+  mystockCk: {fileID: 1923712808}
+  tog0: {fileID: 168479241}
+  weather: {fileID: 1287933833}
+  tog1: {fileID: 292152729}
+  mktime: {fileID: 2043115966}
+  tog2: {fileID: 2040733086}
+  scale: {fileID: 730232307}
+  tog3: {fileID: 54450060}
 --- !u!1001 &1289733005
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -63556,7 +63620,7 @@ GameObject:
   - component: {fileID: 1579628089}
   m_Layer: 0
   m_Name: Buildings
-  m_TagString: others
+  m_TagString: totalMode
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -76616,6 +76680,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1923712807}
   - component: {fileID: 1923712808}
+  - component: {fileID: 1923712809}
   m_Layer: 5
   m_Name: pfModeToggle
   m_TagString: Untagged
@@ -76691,8 +76756,42 @@ MonoBehaviour:
   m_Group: {fileID: 0}
   onValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1923712809}
+        m_TargetAssemblyTypeName: toggleCtrl, Assembly-CSharp
+        m_MethodName: toggle_mystock
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_IsOn: 0
+--- !u!114 &1923712809
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1923712806}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1491fd393936ea47aef2a902918b020, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stockList: {fileID: 11400000, guid: 50551ee8215caea4180d40a69a925c4f, type: 2}
+  myPortfolio: {fileID: 11400000, guid: 833675e2502fa674fb781326cebf2a5d, type: 2}
+  mystockCk: {fileID: 1923712808}
+  tog0: {fileID: 168479241}
+  weather: {fileID: 1287933833}
+  tog1: {fileID: 292152729}
+  mktime: {fileID: 2043115966}
+  tog2: {fileID: 2040733086}
+  scale: {fileID: 730232307}
+  tog3: {fileID: 54450060}
 --- !u!1001 &1924471104
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -82251,6 +82350,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2043115965}
   - component: {fileID: 2043115966}
+  - component: {fileID: 2043115967}
   m_Layer: 0
   m_Name: mkTime
   m_TagString: Untagged
@@ -82326,8 +82426,42 @@ MonoBehaviour:
   m_Group: {fileID: 0}
   onValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2043115967}
+        m_TargetAssemblyTypeName: toggleCtrl, Assembly-CSharp
+        m_MethodName: toggle_mktime
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_IsOn: 0
+--- !u!114 &2043115967
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2043115964}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1491fd393936ea47aef2a902918b020, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stockList: {fileID: 11400000, guid: 50551ee8215caea4180d40a69a925c4f, type: 2}
+  myPortfolio: {fileID: 11400000, guid: 833675e2502fa674fb781326cebf2a5d, type: 2}
+  mystockCk: {fileID: 1923712808}
+  tog0: {fileID: 168479241}
+  weather: {fileID: 1287933833}
+  tog1: {fileID: 292152729}
+  mktime: {fileID: 2043115966}
+  tog2: {fileID: 2040733086}
+  scale: {fileID: 730232307}
+  tog3: {fileID: 54450060}
 --- !u!23 &2043597345
 MeshRenderer:
   m_ObjectHideFlags: 0

@@ -10,20 +10,10 @@ public class InGame : MonoBehaviour
     public portfolio myPortfolio;
 
     public Text totalGain;
-
-    public Toggle mystockCk; //only my stocks 모드 체크
-    public GameObject tog0; //토글 on,off 체크 표시
+    public Toggle scale; //scaling 옵션 체크
 
     public GameObject[] totalMode; //totalMode 건물 오브젝트
     public GameObject[] portfolioMode; //portfolioMode 건물 오브젝트
-    public GameObject[] others; //꾸미기용 건물 오브젝트
-
-    public Toggle weather; //weather 옵션 체크
-    public GameObject tog1; //토글 on,off 체크 표시
-    public Toggle mktime; //market time 옵션 체크
-    public GameObject tog2; //토글 on,off 체크 표시
-    public Toggle scale; //scaling 옵션 체크
-    public GameObject tog3; //토글 on,off 체크 표시
 
     void Start()
     {
@@ -32,24 +22,12 @@ public class InGame : MonoBehaviour
     }
     void Update()
     {
-        if (mystockCk.isOn)
-        {
-            tog0.SetActive(true);
-            portfolioBtnClick();
-        }
-        else
-        {
-            tog0.SetActive(false);
-            totalBtnClick();
-        }
         //포트폴리오가 갱신된 경우
         if (myPortfolio.renew)
         {
             settingPortfolio();
             myPortfolio.renew = false;
         }
-        toggleControl();
-        
     }
     //totalMode
     public void totalBtnClick()
@@ -64,11 +42,6 @@ public class InGame : MonoBehaviour
         {
             totalMode[i].SetActive(true);
         }
-        //others 태그 활성화
-        for (int i = 0; i < others.Length; i++)
-        {
-            others[i].SetActive(true);
-        }
     }
 
     //portfolioMode
@@ -79,11 +52,7 @@ public class InGame : MonoBehaviour
         {
             totalMode[i].SetActive(false);
         }
-        //others 태그 비활성화
-        for (int i = 0; i < others.Length; i++)
-        {
-            others[i].SetActive(false);
-        }
+
         //portfolioMode 태그 활성화
         for (int i = 0; i < portfolioMode.Length; i++)
         {
@@ -93,7 +62,7 @@ public class InGame : MonoBehaviour
     }
 
     //포트폴리오 건물 설치
-    void settingPortfolio()
+    public void settingPortfolio()
     {
         string path = "";
 
@@ -114,7 +83,7 @@ public class InGame : MonoBehaviour
             pos = totalMode[0].transform.Find(key).position;
 
             //건물 설치
-            path = "Prefabs/Buildings/" + key;
+            path = "Buildings/" + key;
             GameObject a = (GameObject)Instantiate(Resources.Load(path));
             a.name = key;
             a.gameObject.tag = "portfolioMode";
@@ -125,7 +94,7 @@ public class InGame : MonoBehaviour
             //scale 옵션이 켜져있으면
             if (scale.isOn)
             {
-                Debug.Log("scale option ON !");
+                Debug.Log("scale option is ON !");
                 /*
                 //수익률에 따른 크기 스케일링 (1 ~ 5단계)
                 double ratio = (myPortfolio.updateCost(key) - myPortfolio.updateInvest(key)) / myPortfolio.updateInvest(key) * 100; // (평가금액 - 평균 매수 금액) / 평균 매수 금액 * 100
@@ -139,42 +108,6 @@ public class InGame : MonoBehaviour
                 a.transform.localScale = new Vector3(scale * a.transform.localScale.x, scale * a.transform.localScale.y, scale * a.transform.localScale.z);
                 */
             }
-            else
-            {
-                Debug.Log("scale option OFF !");
-            }
-        }
-    }
-    void toggleControl()
-    {
-        //weather 옵션
-        if (weather.isOn) {
-            tog1.SetActive(true);
-        }
-        else
-        {
-            tog1.SetActive(false);
-        }
-
-        //market time 옵션
-        if (mktime.isOn)
-        {
-            tog2.SetActive(true);
-        }
-        else
-        {
-            tog2.SetActive(false);
-        }
-        //scale 옵션
-        if (scale.isOn)
-        {
-            tog3.SetActive(true);
-            settingPortfolio();
-        }
-        else
-        {
-            tog3.SetActive(false);
-            settingPortfolio();
         }
     }
 }

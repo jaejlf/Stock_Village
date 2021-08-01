@@ -15,7 +15,6 @@ public class portfolio : ScriptableObject
     public double totalStInvest = 0; //전체 투자금
     public bool renew = false; //포트폴리오 정보 변경 확인 변수
 
-
     public Dictionary<string, StockStat> stockInfo = new Dictionary<string, StockStat>(); //종목별 데이터
     public Dictionary<string, List<Trade>> tradeList = new Dictionary<string, List<Trade>>(); //종목별 거래 정보
 
@@ -41,26 +40,52 @@ public class portfolio : ScriptableObject
     }
     public void BUY(string symbol, double costPerShare, int shares, string tradeDate, int state)
     {
-        //입력한 자금이 부족하지 않은 경우
-        if (Cash >= shares * costPerShare)
+        //기존 거래 정보에 존재하는 종목인 경우
+        if (tradeList.ContainsKey(symbol))
         {
-            tradeList[symbol].Add(new Trade(tradeDate, shares, costPerShare, state)); //일일 거래 데이터 추가
+            //입력한 자금이 부족하지 않은 경우
+            if (Cash >= shares * costPerShare)
+            {
+                tradeList[symbol].Add(new Trade(tradeDate, shares, costPerShare, state)); //일일 거래 데이터 추가
 
-            StockStat tmp = stockInfo[symbol];
-            tmp.avgCostPerShare = (shares * costPerShare + tmp.avgCostPerShare * tmp.shares) / (tmp.shares + shares);
-            tmp.shares += shares;
-            stockInfo[symbol] = tmp;
-            Cash -= shares * costPerShare;
-            renew = true;
+                StockStat tmp = stockInfo[symbol];
+                tmp.avgCostPerShare = (shares * costPerShare + tmp.avgCostPerShare * tmp.shares) / (tmp.shares + shares);
+                tmp.shares += shares;
+                stockInfo[symbol] = tmp;
+                Cash -= shares * costPerShare;
+                renew = true;
+            }
+            else
+            {
+                Debug.Log("매수할 수 있는 자금이 부족합니다.");
+            }
         }
+        //새로운 종목인 경우
         else
         {
-            Debug.Log("매수할 수 있는 자금이 부족합니다.");
+            //입력한 자금이 부족하지 않은 경우
+            if (Cash >= shares * costPerShare)
+            {
+                tradeList.Add(symbol, new List<Trade>());
+                tradeList[symbol].Add(new Trade(tradeDate, shares, costPerShare, state)); //일일 거래 데이터 추가
+
+                stockInfo.Add(symbol, new StockStat());
+                StockStat tmp = stockInfo[symbol];
+                tmp.shares = shares;
+                tmp.avgCostPerShare = costPerShare;
+                stockInfo[symbol] = tmp;
+                Cash -= shares * costPerShare;
+                renew = true;
+            }
+            else
+            {
+                Debug.Log("매수할 수 있는 자금이 부족합니다.");
+            }
         }
     }
     public void SELL(string symbol, double costPerShare, int shares, string tradeDate, int state)
     {
-        //기존 거래 정보에 존재
+        //기존 거래 정보에 존재하는 종목인 경우
         if (tradeList.ContainsKey(symbol))
         {
             if (stockInfo[symbol].shares < shares)
@@ -100,6 +125,8 @@ public class portfolio : ScriptableObject
     //전체 평가 금액
     public double update_Total_Stprice()
     {
+        totalStPrice = 0;
+
         foreach (var key in stockInfo.Keys.ToList())
         {
             if (stockInfo[key].shares == 0) { continue; } //보유수량이 0인 경우 제외
@@ -112,6 +139,8 @@ public class portfolio : ScriptableObject
     //전체 투자금
     public double update_Total_StInvest()
     {
+        totalStInvest = 0;
+
         //전체 투자금
         foreach (var key in stockInfo.Keys.ToList())
         {

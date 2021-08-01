@@ -6,7 +6,6 @@ TagManager:
   tags:
   - totalMode
   - portfolioMode
-  - others
   layers:
   - Default
   - TransparentFX

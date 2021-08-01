@@ -41,7 +41,13 @@ public class setCtrl : MonoBehaviour
             cash.text = myPortfolio.Cash.ToString();
             invest.text = myPortfolio.update_Total_StInvest().ToString();
             gain.text = myPortfolio.totalGain.ToString();
-            gainRatio.text = ((myPortfolio.update_Total_Stprice() / myPortfolio.update_Total_StInvest()) * 100).ToString();
+            if(myPortfolio.update_Total_StInvest() != 0) {
+                gainRatio.text = ((myPortfolio.update_Total_Stprice() / myPortfolio.update_Total_StInvest()) * 100).ToString();
+            }
+            else
+            {
+                gainRatio.text = "-";
+            }
         }
     }
     public void cashEditBtnClick()
