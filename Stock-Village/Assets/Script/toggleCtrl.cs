@@ -1,7 +1,10 @@
+using System;
+using DigitalRuby.RainMaker;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+
 public class toggleCtrl : MonoBehaviour
 {
     public StockList stockList;
@@ -32,27 +35,50 @@ public class toggleCtrl : MonoBehaviour
     }
     public void toggle_weather()
     {
+        double avgMood = 0f;
+        int onf;
+
+        //전날 마감가에 대한 현재 시장가의 평균 변화율 계산
+        foreach (var tmp in stockList.apiInfo.Keys)
+        {
+            avgMood += (stockList.apiInfo[tmp].api_marketprice - stockList.apiInfo[tmp].api_preclose) / stockList.apiInfo[tmp].api_preclose;
+        }
+
+        if(avgMood < 0) { onf = 0; } //rainy
+        else { onf = 1; } //no rain or option off
 
         //weather 옵션
         if (weather.isOn)
         {
             tog1.SetActive(true);
+            GameObject.Find("InGameControl").GetComponent<DemoScript>().weatherClick(onf);
         }
         else
         {
             tog1.SetActive(false);
+            GameObject.Find("InGameControl").GetComponent<DemoScript>().weatherClick(onf);
         }
     }
     public void toggle_mktime()
     {
+        //미국 시장 기준으로 23:30 ~ 6:00까지 market open
+        string h = DateTime.Now.ToString(("HH"));
+        int hour = Int32.Parse(h);
+
+        int onf;
+        if ((hour > 23) || (hour < 7)) { onf = 0; } //market open
+        else { onf = 1; } //market close or option off
+
         //market time 옵션
         if (mktime.isOn)
         {
             tog2.SetActive(true);
+            GameObject.Find("InGameControl").GetComponent<DemoScript>().mktimeClick(onf);
         }
         else
         {
             tog2.SetActive(false);
+            GameObject.Find("InGameControl").GetComponent<DemoScript>().mktimeClick(onf);
         }
     }
     public void toggle_scale()

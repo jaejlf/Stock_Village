@@ -16,6 +16,7 @@ public class optionCtrl : MonoBehaviour
     {
         editPage.SetActive(false);
         setPage.SetActive(false);
+        cashEditPage.SetActive(false);
 
         //창이 열려있으면
         if (optionPage.activeSelf == true)
