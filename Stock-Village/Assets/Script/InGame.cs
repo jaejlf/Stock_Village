@@ -108,6 +108,11 @@ public class InGame : MonoBehaviour
                 a.transform.localScale = new Vector3(scale * a.transform.localScale.x, scale * a.transform.localScale.y, scale * a.transform.localScale.z);
                 */
             }
+
+            //DEBUG ::: 배당정보 체크
+            string divDate = GameObject.Find("portfolioControl").GetComponent<dividendCtrl>().divDate(key);
+            double dividend = GameObject.Find("portfolioControl").GetComponent<dividendCtrl>().dividend(key);
+            Debug.Log(key + " - 배당 날짜 : " + divDate + ", " + "배당금 : " + dividend);
         }
     }
 }
