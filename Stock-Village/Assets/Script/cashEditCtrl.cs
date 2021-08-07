@@ -7,11 +7,6 @@ using System.Linq;
 
 public class cashEditCtrl : MonoBehaviour
 {
-    public GameObject optionPage;
-    public GameObject editPage;
-    public GameObject setPage;
-    public GameObject cashEditPage;
-
     public portfolio myPortfolio;
 
     //cashEditPage 필드
@@ -23,11 +18,7 @@ public class cashEditCtrl : MonoBehaviour
     {
         cash.text = myPortfolio.Cash.ToString();
     }
-    public void backBtnClick()
-    {
-        cashEditPage.SetActive(false);
-        setPage.SetActive(true);
-    }
+
     public void plusBtnClick()
     {
         editedCash.text = (double.Parse(cash.text) + double.Parse(input_cash.text)).ToString();
@@ -53,9 +44,6 @@ public class cashEditCtrl : MonoBehaviour
                 //필드 초기화
                 input_cash.text = "";
                 editedCash.text = "";
-
-                cashEditPage.SetActive(false);
-                setPage.SetActive(true);
             }
         }
     }

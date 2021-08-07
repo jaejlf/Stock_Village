@@ -6,11 +6,6 @@ using UnityEngine.UI;
 
 public class editCtrl : MonoBehaviour
 {
-    public GameObject optionPage;
-    public GameObject editPage;
-    public GameObject setPage;
-    public GameObject cashEditPage;
-
     public portfolio myPortfolio;
 
     //editPage 필드
@@ -19,21 +14,6 @@ public class editCtrl : MonoBehaviour
     public InputField shares;
     public InputField date;
 
-    public void editBtnClick()
-    {
-        optionPage.SetActive(false);
-        setPage.SetActive(false);
-
-        //창이 열려있으면
-        if (editPage.activeSelf == true)
-        {
-            editPage.SetActive(false);
-        }
-        else
-        {
-            editPage.SetActive(true);
-        }
-    }
     public void buyBtnClick()
     {
         if (checkEditData() == true)

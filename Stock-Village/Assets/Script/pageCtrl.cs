@@ -1,0 +1,87 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+using System.Linq;
+
+public class pageCtrl : MonoBehaviour
+{
+    public GameObject setPage;
+    public GameObject optionPage;
+    public GameObject editPage;
+    public GameObject profilePage;
+    public GameObject cashEditPage;
+
+    List<GameObject> PageList = new List<GameObject>();
+    private void Start()
+    {
+        PageList.Add(setPage);
+        PageList.Add(optionPage);
+        PageList.Add(editPage);
+        PageList.Add(profilePage);
+        PageList.Add(cashEditPage);
+    }
+    public void setButtonClick()
+    {
+        int open = 0; //0 : close, 1 : open
+
+        //열려있는 창 있는지 체크
+        foreach(var page in PageList)
+        {
+            if(page.activeSelf == true)
+            {
+                open = 1;
+                break;
+            }
+        }
+        //열려있는 창이 있으면 모든 창 내리기
+        if(open == 1)
+        {
+            closeAll();
+        }
+        //모든 창이 닫혀있다면 setPage open
+        else
+        {
+            setPage.SetActive(true);
+        }
+    }
+
+    public void opBtnClick()
+    {
+        closeAll(); //모든 창 내리기
+        optionPage.SetActive(true);
+    }
+    
+    public void edBtnClick()
+    {
+        closeAll(); //모든 창 내리기
+        editPage.SetActive(true);
+    }
+
+    public void profileBtnClick()
+    {
+        closeAll(); //모든 창 내리기
+        profilePage.SetActive(true);
+    }
+
+    public void backBtnClick()
+    {
+        closeAll(); //모든 창 내리기
+        setPage.SetActive(true);
+    }
+
+    public void cashEd_backBtnClick()
+    {
+        closeAll(); //모든 창 내리기
+        profilePage.SetActive(true);
+    }
+    void closeAll()
+    {
+        setPage.SetActive(false);
+        optionPage.SetActive(false);
+        editPage.SetActive(false);
+        profilePage.SetActive(false);
+        cashEditPage.SetActive(false);
+    }
+}
