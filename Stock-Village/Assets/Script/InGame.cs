@@ -95,9 +95,9 @@ public class InGame : MonoBehaviour
             if (scale.isOn)
             {
                 Debug.Log("scale option is ON !");
-                /*
+                
                 //수익률에 따른 크기 스케일링 (1 ~ 5단계)
-                double ratio = (myPortfolio.updateCost(key) - myPortfolio.updateInvest(key)) / myPortfolio.updateInvest(key) * 100; // (평가금액 - 평균 매수 금액) / 평균 매수 금액 * 100
+                double ratio = (myPortfolio.updateStPrice(key) - myPortfolio.updateStInvest(key)) / myPortfolio.updateStInvest(key) * 100; // (평가금액 - 평균 매수 금액) / 평균 매수 금액 * 100
                 double scale = 1f;
                 if (ratio <= -10) { scale = 0.5f; }
                 else if (ratio < 0) { scale = 0.75f; }
@@ -105,13 +105,13 @@ public class InGame : MonoBehaviour
                 else if (ratio >= 10 && ratio <= 30) { scale = 1.25f; }
                 else { scale = 1.5f; }
             
-                a.transform.localScale = new Vector3(scale * a.transform.localScale.x, scale * a.transform.localScale.y, scale * a.transform.localScale.z);
-                */
+                a.transform.localScale = new Vector3((float)(scale * a.transform.localScale.x), (float)(scale * a.transform.localScale.y), (float)(scale * a.transform.localScale.z));
+                
             }
 
             //DEBUG ::: 배당정보 체크
-            string divDate = GameObject.Find("portfolioControl").GetComponent<dividendCtrl>().divDate(key);
-            double dividend = GameObject.Find("portfolioControl").GetComponent<dividendCtrl>().dividend(key);
+            string divDate = GameObject.Find("InGameControl").GetComponent<dividendCtrl>().divDate(key);
+            double dividend = GameObject.Find("InGameControl").GetComponent<dividendCtrl>().dividend(key);
             Debug.Log(key + " - 배당 날짜 : " + divDate + ", " + "배당금 : " + dividend);
         }
     }

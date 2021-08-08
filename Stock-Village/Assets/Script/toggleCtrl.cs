@@ -45,18 +45,18 @@ public class toggleCtrl : MonoBehaviour
         }
 
         if(avgMood < 0) { onf = 0; } //rainy
-        else { onf = 1; } //no rain or option off
+        else { onf = 1; } //no rain
 
         //weather 옵션
         if (weather.isOn)
         {
             tog1.SetActive(true);
-            GameObject.Find("InGameControl").GetComponent<DemoScript>().weatherClick(onf);
+            GameObject.Find("InGameControl").GetComponent<DemoScript>().weatherClick(onf); //avgMood에 따라 on/off
         }
         else
         {
             tog1.SetActive(false);
-            GameObject.Find("InGameControl").GetComponent<DemoScript>().weatherClick(onf);
+            GameObject.Find("InGameControl").GetComponent<DemoScript>().weatherClick(1); //옵션이 꺼져있으면 off (=default)
         }
     }
     public void toggle_mktime()
@@ -67,18 +67,18 @@ public class toggleCtrl : MonoBehaviour
 
         int onf;
         if ((hour > 23) || (hour < 7)) { onf = 0; } //market open
-        else { onf = 1; } //market close or option off
+        else { onf = 1; } //market close
 
         //market time 옵션
         if (mktime.isOn)
         {
             tog2.SetActive(true);
-            GameObject.Find("InGameControl").GetComponent<DemoScript>().mktimeClick(onf);
+            GameObject.Find("InGameControl").GetComponent<DemoScript>().mktimeClick(onf); //market time에 따라 on/off
         }
         else
         {
             tog2.SetActive(false);
-            GameObject.Find("InGameControl").GetComponent<DemoScript>().mktimeClick(onf);
+            GameObject.Find("InGameControl").GetComponent<DemoScript>().mktimeClick(0); //옵션이 꺼져있으면 on (=default)
         }
     }
     public void toggle_scale()

@@ -13,6 +13,8 @@ public class pageCtrl : MonoBehaviour
     public GameObject profilePage;
     public GameObject cashEditPage;
 
+    public bool popUp; //팝업창이 열려있는지 확인
+
     List<GameObject> PageList = new List<GameObject>();
     private void Start()
     {
@@ -39,11 +41,13 @@ public class pageCtrl : MonoBehaviour
         if(open == 1)
         {
             closeAll();
+            popUp = false; //모든 팝업창이 닫혀있음
         }
         //모든 창이 닫혀있다면 setPage open
         else
         {
             setPage.SetActive(true);
+            popUp = true; //팝업창이 열려있음
         }
     }
 
