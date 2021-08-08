@@ -7,6 +7,7 @@ public class moveBtnCtrl : MonoBehaviour
 {
     public Camera[] sectorCamera; //섹터별 카메라 리스트
     public Text SectorName; //화면에 띄울 섹터명
+
     string[] SectorNames = { "Full Shot", "IT", "Consumer", "Financial", "Health Care", "Industrial", "Real Estate" };
     private int SectorIndex;
 
@@ -34,6 +35,14 @@ public class moveBtnCtrl : MonoBehaviour
         SectorIndex = (SectorIndex - 1);
         if (SectorIndex <= 0) { SectorIndex = 6; }
         SectorName.text = SectorNames[SectorIndex];
+
+        //이동할 카메라 position, rotation 반환
+        Vector3 pos = sectorCamera[SectorIndex].transform.position;
+        Quaternion rot = sectorCamera[SectorIndex].transform.rotation;
+ 
+        //카메라 이동
+        Camera.main.transform.position = Vector3.Lerp(Camera.main.transform.position, pos, 1);
+        Camera.main.transform.rotation = Quaternion.Lerp(Camera.main.transform.rotation, rot, 1);
     }
     public void rightBtnClick()
     {
@@ -41,6 +50,14 @@ public class moveBtnCtrl : MonoBehaviour
         SectorIndex = (SectorIndex + 1);
         if (SectorIndex > 6) { SectorIndex = 1; }
         SectorName.text = SectorNames[SectorIndex];
+
+        //이동할 카메라 position, rotation 반환
+        Vector3 pos = sectorCamera[SectorIndex].transform.position;
+        Quaternion rot = sectorCamera[SectorIndex].transform.rotation;
+
+        //카메라 이동
+        Camera.main.transform.position = Vector3.Lerp(Camera.main.transform.position, pos, 1);
+        Camera.main.transform.rotation = Quaternion.Lerp(Camera.main.transform.rotation, rot, 1);
     }
     public void fullShotBtnClick()
     {
@@ -48,5 +65,12 @@ public class moveBtnCtrl : MonoBehaviour
         SectorIndex = 0;
         SectorName.text = SectorNames[SectorIndex];
 
+        //이동할 카메라 position, rotation 반환
+        Vector3 pos = sectorCamera[SectorIndex].transform.position;
+        Quaternion rot = sectorCamera[SectorIndex].transform.rotation;
+
+        //카메라 이동
+        Camera.main.transform.position = Vector3.Lerp(Camera.main.transform.position, pos, 1);
+        Camera.main.transform.rotation = Quaternion.Lerp(Camera.main.transform.rotation, rot, 1);
     }
 }

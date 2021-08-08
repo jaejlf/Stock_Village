@@ -20,7 +20,7 @@ public class LoadControl : MonoBehaviour
     public API api;
 
     //주식 종목 코드 배열
-    List<string> symbolList = new List<string>() { "MSFT" }; //"GOOGL", "SBUX", "PYPL" };
+    List<string> symbolList = new List<string>() { "MSFT" };
     /*List<string> symbolList = new List<string>() { "MSFT", "ORCL", "AAPL", "IBM", "GOOGL", "FB", "NFLX", "DIS", //IT
                                                     "AMZN", "TSLA", "SBUX", "NKE","WMT", "COST", "KO", "PEP", //Consumer
                                                     "V", "PYPL", "BAC", "C", //Financial
