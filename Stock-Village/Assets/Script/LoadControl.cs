@@ -133,6 +133,14 @@ public class LoadControl : MonoBehaviour
             string tmp_pc = (string)obj["price"]["regularMarketPreviousClose"]["raw"];
             double.TryParse(tmp_pc, out double pc);
 
+            //volume
+            string tmp_vl = (string)obj["summaryDetail"]["volume"]["raw"];
+            double.TryParse(tmp_vl, out double vl);
+
+            //avg Volume(10day)
+            string tmp_avgvl = (string)obj["price"]["averageDailyVolume10Day"]["raw"];
+            double.TryParse(tmp_avgvl, out double avgvl);
+
             count++;
 
             //apiInfo 정보 업데이트
@@ -146,10 +154,12 @@ public class LoadControl : MonoBehaviour
                 stockList.apiInfo[symbol].api_per = per;
                 stockList.apiInfo[symbol].api_52week = wc;
                 stockList.apiInfo[symbol].api_preclose = pc;
+                stockList.apiInfo[symbol].api_volume = vl;
+                stockList.apiInfo[symbol].api_avgVolume = avgvl;
             }
             else
             {
-                stockList.add(symbol, cp, dd, dr, sec, mc, per, wc, pc);
+                stockList.add(symbol, cp, dd, dr, sec, mc, per, wc, pc, vl, avgvl);
             }
         };
     }

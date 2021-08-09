@@ -24,7 +24,7 @@ public class portfolio : ScriptableObject
         public double avgCostPerShare;
     };
 
-    public class Trade //API에서 불러온 데이터 return 하기 위한 클래스
+    public class Trade //종목별 거래 정보
     {
         public string tradeDate; //매매 날짜
         public int shares; //매매 수량

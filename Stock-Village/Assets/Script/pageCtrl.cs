@@ -14,8 +14,8 @@ public class pageCtrl : MonoBehaviour
     public GameObject cashEditPage;
 
     public bool popUp; //팝업창이 열려있는지 확인
-
     List<GameObject> PageList = new List<GameObject>();
+
     private void Start()
     {
         PageList.Add(setPage);

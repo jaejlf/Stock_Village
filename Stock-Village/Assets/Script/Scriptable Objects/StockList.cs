@@ -18,8 +18,11 @@ public class StockList : ScriptableObject
         public double api_per; //PER
         public double api_52week; //시가 성장 변화(52 week change)
         public double api_preclose; //이전 마감가
+        public double api_volume; //거래량
+        public double api_avgVolume; //평균 거래량(10days)
 
-        public APIData(double api_marketprice, string api_divDate, double api_divRate, string api_sector, double api_marketcap, double api_per, double api_52week, double api_preclose)
+        public APIData(double api_marketprice, string api_divDate, double api_divRate, string api_sector,
+            double api_marketcap, double api_per, double api_52week, double api_preclose, double api_volume, double api_avgVolume)
         {
             this.api_marketprice = api_marketprice;
             this.api_divDate = api_divDate;
@@ -29,10 +32,13 @@ public class StockList : ScriptableObject
             this.api_per = api_per;
             this.api_52week = api_52week;
             this.api_preclose = api_preclose;
+            this.api_volume = api_volume;
+            this.api_avgVolume = api_avgVolume;
         }
     }
-    public void add(string code, double send_price, string send_divdate, double send_divrate, string send_sector, double send_marketcap, double send_per, double send_52, double send_preclose)
+    public void add(string code, double send_price, string send_divdate, double send_divrate, string send_sector,
+        double send_marketcap, double send_per, double send_52, double send_preclose, double send_volume, double send_avgVolume)
     {
-        apiInfo.Add(code, new APIData(send_price, send_divdate, send_divrate, send_sector, send_marketcap, send_per, send_52, send_preclose));
+        apiInfo.Add(code, new APIData(send_price, send_divdate, send_divrate, send_sector, send_marketcap, send_per, send_52, send_preclose, send_volume, send_avgVolume));
     }
 }
