@@ -16,6 +16,7 @@ public class LoadControl : MonoBehaviour
 
     int count = 0; //불러올 종목 정보 개수
     public Slider LoadSlider; //로딩바
+    public Text progress; //진행 상태
     public StockList stockList; //주식 정보 저장 객체
     public API api;
 
@@ -31,6 +32,7 @@ public class LoadControl : MonoBehaviour
     void Start()
     {
         LoadSlider.value = 0; //슬라이더 바 상태 초기화
+        progress.text = "0%";
 
         apiCall();
         coroutine1 = gameLoading();
@@ -48,17 +50,19 @@ public class LoadControl : MonoBehaviour
             yield return null;
 
             //로딩바 50% 채우기
-            float progress1 = Mathf.Clamp01(ingame.progress / .9f) * 5f; 
-            LoadSlider.value = progress1;
+            float prog = Mathf.Clamp01(ingame.progress / .9f) * 5f; 
+            LoadSlider.value = prog;
+            progress.text = (prog * 10).ToString() + "%";
 
             //로딩바 50~100% 
-            if (progress1 >= 5)
+            if (prog >= 5)
             {
                 //주식 정보 로드 진행 비율만큼 채우기
                 while (count < symbolList.Count)
                 {
-                    float progress2 = Mathf.Clamp01(count / symbolList.Count) * 5f;
-                    LoadSlider.value = 5f + progress2;
+                    float prog2 = Mathf.Clamp01(count / symbolList.Count) * 5f;
+                    LoadSlider.value = 5f + prog2;
+                    progress.text = ((5f + prog2) * 10).ToString() + "%";
                     yield return null;
                 }
                 ingame.allowSceneActivation = true; //InGame 씬 로드
