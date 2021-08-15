@@ -35,7 +35,7 @@ public class clickBuilding : MonoBehaviour
         buildingClick();
     }
     void buildingClick()
-    {    
+    {
         if (GameObject.Find("InGameControl").GetComponent<pageCtrl>().popUp) { return; } //열려있는 팝업창이 있다면 실행하지 않음
 
         //클릭한 객체 이름 출력
@@ -45,14 +45,13 @@ public class clickBuilding : MonoBehaviour
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             if (Physics.Raycast(ray, out hit))
             {
-                if (hit.collider.gameObject.tag == "stock")//건물 오브젝트를 클릭한 경우
+                if (hit.collider.gameObject.tag == "stock" || hit.collider.gameObject.tag == "portfolioMode")//건물 오브젝트를 클릭한 경우
                 {
                     stockInfo.SetActive(true);
                     GameObject.Find("InGameControl").GetComponent<pageCtrl>().popUp = true;
                     symbol = hit.collider.gameObject.name;
                     settingStockInfo(symbol);
                 }
-
             }
         }
     }

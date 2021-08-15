@@ -22,12 +22,12 @@ public class LoadControl : MonoBehaviour
 
     //주식 종목 코드 배열
     List<string> symbolList = new List<string>() { "MSFT" };
-    /*List<string> symbolList = new List<string>() { "MSFT", "ORCL", "AAPL", "IBM", "GOOGL", "FB", "NFLX", "DIS", //IT
+    /* List<string> symbolList = new List<string>() { "MSFT", "ORCL", "AAPL", "IBM", "GOOGL", "FB", "NFLX", "DIS", //IT
                                                     "AMZN", "TSLA", "SBUX", "NKE","WMT", "COST", "KO", "PEP", //Consumer
                                                     "V", "PYPL", "BAC", "C", //Financial
                                                     "JNJ", "PFE", "UNH", //Healthcare
                                                     "HON", "UNP", "LMT", //Industrial
-                                                    "AMT", "EQIX", "PLD", "O"}; //Real Estate    */
+                                                    "AMT", "EQIX", "PLD", "O"}; //Real Estate */
 
     void Start()
     {
@@ -89,6 +89,7 @@ public class LoadControl : MonoBehaviour
 
     async Task BeginNetwork(string symbol)
     {
+        Debug.Log(symbol);
 
         var client = new HttpClient();
         var request = new HttpRequestMessage

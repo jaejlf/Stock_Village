@@ -96,17 +96,14 @@ public class InGame : MonoBehaviour
             {
                 Debug.Log("scale option is ON !");
                 
-                //수익률에 따른 크기 스케일링 (1 ~ 5단계)
+                //수익률에 따른 크기 스케일링 (1 ~ 3단계)
                 double ratio = (myPortfolio.updateStPrice(key) - myPortfolio.updateStInvest(key)) / myPortfolio.updateStInvest(key) * 100; // (평가금액 - 평균 매수 금액) / 평균 매수 금액 * 100
                 double scale = 1f;
-                if (ratio <= -10) { scale = 0.5f; }
-                else if (ratio < 0) { scale = 0.75f; }
+                if (ratio < 0) { scale = 0.7f; }
                 else if (ratio >= 0 && ratio < 10) { scale = 1f; }
-                else if (ratio >= 10 && ratio <= 30) { scale = 1.25f; }
-                else { scale = 1.5f; }
+                else if (ratio >= 10 && ratio <= 30) { scale = 1.3f; }
             
-                a.transform.localScale = new Vector3((float)(scale * a.transform.localScale.x), (float)(scale * a.transform.localScale.y), (float)(scale * a.transform.localScale.z));
-                
+                a.transform.localScale = new Vector3((float)(scale * a.transform.localScale.x), (float)(scale * a.transform.localScale.y), (float)(scale * a.transform.localScale.z));   
             }
         }
     }

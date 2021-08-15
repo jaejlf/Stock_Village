@@ -18,10 +18,10 @@ public class first : MonoBehaviour
     public async void StartBtnClick()
     {
         bool result = await checkApi();
+
         //유효한 API key인 경우
         if (result)
         {
-            Debug.Log("ok");
             api.key = apikey.text; //API key를 Scriptable Object API에 저장
             SceneManager.LoadScene("Load"); //Load 씬으로
         }

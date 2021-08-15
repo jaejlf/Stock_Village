@@ -16,8 +16,9 @@ public class pageCtrl : MonoBehaviour
     public bool popUp; //팝업창이 열려있는지 확인
     List<GameObject> PageList = new List<GameObject>();
 
-    private void Start()
+    void Start()
     {
+        popUp = false;
         PageList.Add(setPage);
         PageList.Add(optionPage);
         PageList.Add(editPage);
@@ -26,19 +27,8 @@ public class pageCtrl : MonoBehaviour
     }
     public void setButtonClick()
     {
-        int open = 0; //0 : close, 1 : open
-
-        //열려있는 창 있는지 체크
-        foreach(var page in PageList)
-        {
-            if(page.activeSelf == true)
-            {
-                open = 1;
-                break;
-            }
-        }
         //열려있는 창이 있으면 모든 창 내리기
-        if(open == 1)
+        if(popUp == true)
         {
             closeAll();
             popUp = false; //모든 팝업창이 닫혀있음
@@ -50,7 +40,6 @@ public class pageCtrl : MonoBehaviour
             popUp = true; //팝업창이 열려있음
         }
     }
-
     public void opBtnClick()
     {
         closeAll(); //모든 창 내리기
