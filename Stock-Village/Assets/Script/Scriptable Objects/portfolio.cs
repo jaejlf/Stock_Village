@@ -82,6 +82,8 @@ public class portfolio : ScriptableObject
                 Debug.Log("매수할 수 있는 자금이 부족합니다.");
             }
         }
+
+        totalGain = update_Total_Stprice() - update_Total_StInvest();
     }
     public void SELL(string symbol, double costPerShare, int shares, string tradeDate, int state)
     {
@@ -108,6 +110,8 @@ public class portfolio : ScriptableObject
         {
             Debug.Log("보유하지 않은 종목을 매도할 수 없습니다");
         }
+
+        totalGain = update_Total_Stprice() - update_Total_StInvest();
     }
 
     //종목별 평가 금액 (시장가격 X 수량)

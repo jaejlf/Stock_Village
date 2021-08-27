@@ -9,7 +9,6 @@ public class InGame : MonoBehaviour
     public StockList stockList;
     public portfolio myPortfolio;
 
-    public Text totalGain;
     public Toggle scale; //scaling 옵션 체크
 
     public GameObject[] totalMode; //totalMode 건물 오브젝트
@@ -69,9 +68,6 @@ public class InGame : MonoBehaviour
         //포트폴리오 건물 전체 삭제
         foreach (GameObject tmp in myPortfolio.pfBuildings) { Destroy(tmp); }
         myPortfolio.pfBuildings.Clear();
-
-        //전체 수익금 = 전체 평가금액 - 나의 전체 투자금액
-        totalGain.text = (myPortfolio.update_Total_Stprice() - myPortfolio.update_Total_StInvest()).ToString();
 
         //건물 설치
         foreach (var key in myPortfolio.stockInfo.Keys.ToList())

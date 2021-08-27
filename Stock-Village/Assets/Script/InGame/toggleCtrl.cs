@@ -20,6 +20,12 @@ public class toggleCtrl : MonoBehaviour
     public Toggle scale; //scaling 옵션 체크
     public GameObject tog3; //토글 on,off 체크 표시
 
+    public Text timeTxt; //market time 텍스트
+
+    public void FixedUpdate()
+    {
+        marketTimer();
+    }
     public void toggle_mystock()
     {
         if (mystockCk.isOn)
@@ -61,19 +67,11 @@ public class toggleCtrl : MonoBehaviour
     }
     public void toggle_mktime()
     {
-        //미국 시장 기준으로 23:30 ~ 6:00까지 market open
-        string h = DateTime.Now.ToString(("HH"));
-        int hour = Int32.Parse(h);
-
-        int onf;
-        if ((hour > 23) || (hour < 7)) { onf = 0; } //market open
-        else { onf = 1; } //market close
-
         //market time 옵션
         if (mktime.isOn)
         {
             tog2.SetActive(true);
-            GameObject.Find("InGameControl").GetComponent<DemoScript>().mktimeClick(onf); //market time에 따라 on/off
+            GameObject.Find("InGameControl").GetComponent<DemoScript>().mktimeClick(marketTimer()); //market time에 따라 on/off
         }
         else
         {
@@ -93,6 +91,56 @@ public class toggleCtrl : MonoBehaviour
         {
             tog3.SetActive(false);
             GameObject.Find("InGameControl").GetComponent<InGame>().settingPortfolio();
+        }
+    }
+
+    int marketTimer()
+    {
+        //미국 시장 기준으로 23:30 ~ 6:00까지 market open
+        string ck = "";
+
+        DateTime now = DateTime.Now; //현재 시간
+        DateTime openTime = new DateTime(now.Year, now.Month, now.Day, 23, 30, 00); //개장 : 23:30
+        DateTime closeTime = new DateTime(now.Year, now.Month, now.Day, 06, 01, 00); //마감 : 6:01
+        TimeSpan timer; //남은 시간
+
+        //시간 체크
+        if (now.Hour == 6)
+        {
+            if (now.Minute == 0) { ck = "open"; }
+            else { ck = "close"; }
+        }
+        else if (now.Hour == 23)
+        {
+            if (now.Minute >= 30)
+            {
+                closeTime = closeTime.AddDays(1);
+                ck = "open";
+            }
+            else { ck = "close"; }
+        }
+        else
+        {
+            if ((now.Hour >= 7) && (now.Hour <= 22)) { ck = "close"; }
+            else { ck = "open"; }
+        }
+
+        //text setting & return
+        if (ck.Equals("open"))
+        {
+            timer = closeTime - now;
+            //Debug.Log("남은 시간 : " + timer.ToString(@"hh\:mm\:ss"));
+            timeTxt.text = "마감까지 " + timer.ToString(@"hh\:mm\:ss");
+
+            return 0;
+        }
+        else
+        {
+            timer = openTime - now;
+            //Debug.Log("남은 시간 : " + timer.ToString(@"hh\:mm\:ss"));
+            timeTxt.text = "개장까지 " + timer.ToString(@"hh\:mm\:ss");
+
+            return 1;
         }
     }
 }

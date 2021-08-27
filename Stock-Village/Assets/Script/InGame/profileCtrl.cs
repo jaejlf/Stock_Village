@@ -7,12 +7,6 @@ using System.Linq;
 
 public class profileCtrl : MonoBehaviour
 {
-    public GameObject setPage;
-    public GameObject optionPage;
-    public GameObject editPage;
-    public GameObject profilePage;
-    public GameObject cashEditPage;
-
     public portfolio myPortfolio;
 
     //setPage ÇÊµå
@@ -23,6 +17,7 @@ public class profileCtrl : MonoBehaviour
     void Update()
     {
         double gainRatio;
+
         cash.text = myPortfolio.Cash.ToString();
         invest.text = myPortfolio.update_Total_StInvest().ToString();
         if(myPortfolio.update_Total_StInvest() != 0) {
@@ -33,18 +28,5 @@ public class profileCtrl : MonoBehaviour
         {
             gain.text = myPortfolio.totalGain.ToString() + " (0 %)";
         }
-    }
-    public void cashEditBtnClick()
-    {
-        closeAll();
-        cashEditPage.SetActive(true);
-    }
-    void closeAll()
-    {
-        setPage.SetActive(false);
-        optionPage.SetActive(false);
-        editPage.SetActive(false);
-        profilePage.SetActive(false);
-        cashEditPage.SetActive(false);
     }
 }

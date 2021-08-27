@@ -14,20 +14,10 @@ public class pageCtrl : MonoBehaviour
     public GameObject cashEditPage;
 
     public bool popUp; //팝업창이 열려있는지 확인
-    //public Button test;
-
-    List<GameObject> PageList = new List<GameObject>();
 
     void Start()
     {
         popUp = false;
-        PageList.Add(setPage);
-        PageList.Add(optionPage);
-        PageList.Add(editPage);
-        PageList.Add(profilePage);
-        PageList.Add(cashEditPage);
-
-        //test.onClick.AddListener(()=>setButtonClick());
     }
     public void setButtonClick()
     {
@@ -48,31 +38,45 @@ public class pageCtrl : MonoBehaviour
     {
         closeAll(); //모든 창 내리기
         optionPage.SetActive(true);
+        popUp = true;
     }
     
     public void edBtnClick()
     {
         closeAll(); //모든 창 내리기
         editPage.SetActive(true);
+        popUp = true;
     }
 
-    public void profileBtnClick()
+    public void cashEdBtnClick()
     {
         closeAll(); //모든 창 내리기
-        profilePage.SetActive(true);
+        cashEditPage.SetActive(true);
+        popUp = true;
+    }
+    public void profileBtnClick()
+    {
+        //열려있는 창이 있으면 모든 창 내리기
+        if (popUp == true)
+        {
+            closeAll();
+            popUp = false; //모든 팝업창이 닫혀있음
+        }
+        //모든 창이 닫혀있다면 setPage open
+        else
+        {
+            profilePage.SetActive(true);
+            popUp = true; //팝업창이 열려있음
+        }
     }
 
     public void backBtnClick()
     {
         closeAll(); //모든 창 내리기
         setPage.SetActive(true);
+        popUp = true;
     }
 
-    public void cashEd_backBtnClick()
-    {
-        closeAll(); //모든 창 내리기
-        profilePage.SetActive(true);
-    }
     void closeAll()
     {
         setPage.SetActive(false);
@@ -80,5 +84,7 @@ public class pageCtrl : MonoBehaviour
         editPage.SetActive(false);
         profilePage.SetActive(false);
         cashEditPage.SetActive(false);
+
+        popUp = false;
     }
 }
