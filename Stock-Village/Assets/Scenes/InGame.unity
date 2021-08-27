@@ -6426,7 +6426,6 @@ GameObject:
   - component: {fileID: 145341747}
   - component: {fileID: 145341746}
   - component: {fileID: 145341745}
-  - component: {fileID: 145341748}
   m_Layer: 5
   m_Name: backButton
   m_TagString: Untagged
@@ -6498,7 +6497,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 145341748}
+      - m_Target: {fileID: 544856755}
         m_TargetAssemblyTypeName: pageCtrl, Assembly-CSharp
         m_MethodName: backBtnClick
         m_Mode: 1
@@ -6548,24 +6547,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 145341743}
   m_CullTransparentMesh: 1
---- !u!114 &145341748
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 145341743}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 77247922df3cb134aadff057f069d5cd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  setPage: {fileID: 1825698448}
-  optionPage: {fileID: 1042243891}
-  editPage: {fileID: 80808181}
-  profilePage: {fileID: 1487046194}
-  cashEditPage: {fileID: 287853522}
-  popUp: 0
 --- !u!1 &147723153
 GameObject:
   m_ObjectHideFlags: 0
@@ -8118,7 +8099,6 @@ GameObject:
   - component: {fileID: 173346716}
   - component: {fileID: 173346715}
   - component: {fileID: 173346714}
-  - component: {fileID: 173346717}
   m_Layer: 5
   m_Name: buyButton
   m_TagString: Untagged
@@ -8190,7 +8170,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 173346717}
+      - m_Target: {fileID: 544856758}
         m_TargetAssemblyTypeName: editCtrl, Assembly-CSharp
         m_MethodName: buyBtnClick
         m_Mode: 1
@@ -8240,23 +8220,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 173346712}
   m_CullTransparentMesh: 1
---- !u!114 &173346717
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 173346712}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cbaa736739e80304fabbe898162e568c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  myPortfolio: {fileID: 11400000, guid: 833675e2502fa674fb781326cebf2a5d, type: 2}
-  symbol: {fileID: 1178104939}
-  avgCost: {fileID: 599505103}
-  shares: {fileID: 1975363062}
-  date: {fileID: 1868996049}
 --- !u!1001 &175341266
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -24720,6 +24683,10 @@ GameObject:
   - component: {fileID: 544856754}
   - component: {fileID: 544856755}
   - component: {fileID: 544856756}
+  - component: {fileID: 544856757}
+  - component: {fileID: 544856758}
+  - component: {fileID: 544856760}
+  - component: {fileID: 544856759}
   m_Layer: 0
   m_Name: InGameControl
   m_TagString: Untagged
@@ -24861,6 +24828,82 @@ MonoBehaviour:
   _gain: {fileID: 346384440}
   _dividend: {fileID: 468468577}
   _tradeDate: {fileID: 102273668}
+--- !u!114 &544856757
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 544856749}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1491fd393936ea47aef2a902918b020, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stockList: {fileID: 11400000, guid: 50551ee8215caea4180d40a69a925c4f, type: 2}
+  myPortfolio: {fileID: 11400000, guid: 833675e2502fa674fb781326cebf2a5d, type: 2}
+  mystockCk: {fileID: 1923712808}
+  tog0: {fileID: 168479241}
+  weather: {fileID: 1287933833}
+  tog1: {fileID: 292152729}
+  mktime: {fileID: 1523077865}
+  tog2: {fileID: 651698756}
+  scale: {fileID: 1743075502}
+  tog3: {fileID: 1981973562}
+--- !u!114 &544856758
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 544856749}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cbaa736739e80304fabbe898162e568c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myPortfolio: {fileID: 11400000, guid: 833675e2502fa674fb781326cebf2a5d, type: 2}
+  symbol: {fileID: 1178104939}
+  avgCost: {fileID: 599505103}
+  shares: {fileID: 1975363062}
+  date: {fileID: 1868996049}
+--- !u!114 &544856759
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 544856749}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f37df38ad0ce8040a6b49adc398e348, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  setPage: {fileID: 1825698448}
+  optionPage: {fileID: 1042243891}
+  editPage: {fileID: 80808181}
+  profilePage: {fileID: 1487046194}
+  cashEditPage: {fileID: 287853522}
+  myPortfolio: {fileID: 11400000, guid: 833675e2502fa674fb781326cebf2a5d, type: 2}
+  cash: {fileID: 1085910886}
+  invest: {fileID: 886284721}
+  gain: {fileID: 1409494813}
+--- !u!114 &544856760
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 544856749}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a383ed5e3f351c241a1e7c0c525473f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myPortfolio: {fileID: 11400000, guid: 833675e2502fa674fb781326cebf2a5d, type: 2}
+  cash: {fileID: 3186287}
+  input_cash: {fileID: 190583878}
+  editedCash: {fileID: 1150605664}
 --- !u!1001 &545360549
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -26493,7 +26536,6 @@ GameObject:
   - component: {fileID: 577390268}
   - component: {fileID: 577390267}
   - component: {fileID: 577390266}
-  - component: {fileID: 577390265}
   m_Layer: 5
   m_Name: setButton
   m_TagString: Untagged
@@ -26521,24 +26563,6 @@ RectTransform:
   m_AnchoredPosition: {x: 830, y: -409}
   m_SizeDelta: {x: 150, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &577390265
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 577390263}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 77247922df3cb134aadff057f069d5cd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  setPage: {fileID: 1825698448}
-  optionPage: {fileID: 1042243891}
-  editPage: {fileID: 80808181}
-  profilePage: {fileID: 1487046194}
-  cashEditPage: {fileID: 287853522}
-  popUp: 0
 --- !u!95 &577390266
 Animator:
   serializedVersion: 3
@@ -26602,7 +26626,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 577390265}
+      - m_Target: {fileID: 544856755}
         m_TargetAssemblyTypeName: pageCtrl, Assembly-CSharp
         m_MethodName: setButtonClick
         m_Mode: 1
@@ -31557,7 +31581,6 @@ GameObject:
   - component: {fileID: 687796685}
   - component: {fileID: 687796684}
   - component: {fileID: 687796683}
-  - component: {fileID: 687796682}
   m_Layer: 5
   m_Name: editEndButton
   m_TagString: Untagged
@@ -31585,22 +31608,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -239}
   m_SizeDelta: {x: 492.77, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &687796682
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 687796680}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a383ed5e3f351c241a1e7c0c525473f3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  myPortfolio: {fileID: 11400000, guid: 833675e2502fa674fb781326cebf2a5d, type: 2}
-  cash: {fileID: 3186287}
-  input_cash: {fileID: 190583878}
-  editedCash: {fileID: 1150605664}
 --- !u!114 &687796683
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -31645,7 +31652,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 687796682}
+      - m_Target: {fileID: 544856760}
         m_TargetAssemblyTypeName: cashEditCtrl, Assembly-CSharp
         m_MethodName: editEndBtnClick
         m_Mode: 1
@@ -32978,7 +32985,6 @@ GameObject:
   - component: {fileID: 717413255}
   - component: {fileID: 717413254}
   - component: {fileID: 717413253}
-  - component: {fileID: 717413256}
   m_Layer: 5
   m_Name: backButton
   m_TagString: Untagged
@@ -33050,7 +33056,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 717413256}
+      - m_Target: {fileID: 544856755}
         m_TargetAssemblyTypeName: pageCtrl, Assembly-CSharp
         m_MethodName: cashEd_backBtnClick
         m_Mode: 1
@@ -33100,24 +33106,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 717413251}
   m_CullTransparentMesh: 1
---- !u!114 &717413256
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 717413251}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 77247922df3cb134aadff057f069d5cd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  setPage: {fileID: 1825698448}
-  optionPage: {fileID: 1042243891}
-  editPage: {fileID: 80808181}
-  profilePage: {fileID: 1487046194}
-  cashEditPage: {fileID: 287853522}
-  popUp: 0
 --- !u!1001 &717565610
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -38920,7 +38908,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 857112886}
+      - m_Target: {fileID: 544856755}
         m_TargetAssemblyTypeName: pageCtrl, Assembly-CSharp
         m_MethodName: profileBtnClick
         m_Mode: 1
@@ -51880,7 +51868,6 @@ GameObject:
   - component: {fileID: 1176857765}
   - component: {fileID: 1176857764}
   - component: {fileID: 1176857763}
-  - component: {fileID: 1176857766}
   m_Layer: 5
   m_Name: minusButton
   m_TagString: Untagged
@@ -51952,7 +51939,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1176857766}
+      - m_Target: {fileID: 544856760}
         m_TargetAssemblyTypeName: cashEditCtrl, Assembly-CSharp
         m_MethodName: minusBtnClick
         m_Mode: 1
@@ -52002,22 +51989,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1176857761}
   m_CullTransparentMesh: 1
---- !u!114 &1176857766
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1176857761}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a383ed5e3f351c241a1e7c0c525473f3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  myPortfolio: {fileID: 11400000, guid: 833675e2502fa674fb781326cebf2a5d, type: 2}
-  cash: {fileID: 3186287}
-  input_cash: {fileID: 190583878}
-  editedCash: {fileID: 1150605664}
 --- !u!1 &1178104937
 GameObject:
   m_ObjectHideFlags: 0
@@ -54397,7 +54368,6 @@ GameObject:
   - component: {fileID: 1239502454}
   - component: {fileID: 1239502453}
   - component: {fileID: 1239502452}
-  - component: {fileID: 1239502455}
   m_Layer: 5
   m_Name: opBtn
   m_TagString: Untagged
@@ -54469,7 +54439,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1239502455}
+      - m_Target: {fileID: 544856755}
         m_TargetAssemblyTypeName: pageCtrl, Assembly-CSharp
         m_MethodName: opBtnClick
         m_Mode: 1
@@ -54519,24 +54489,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1239502450}
   m_CullTransparentMesh: 1
---- !u!114 &1239502455
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1239502450}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 77247922df3cb134aadff057f069d5cd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  setPage: {fileID: 1825698448}
-  optionPage: {fileID: 1042243891}
-  editPage: {fileID: 80808181}
-  profilePage: {fileID: 1487046194}
-  cashEditPage: {fileID: 287853522}
-  popUp: 0
 --- !u!1001 &1240047116
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -54724,7 +54676,6 @@ GameObject:
   - component: {fileID: 1243037933}
   - component: {fileID: 1243037932}
   - component: {fileID: 1243037931}
-  - component: {fileID: 1243037934}
   m_Layer: 5
   m_Name: plusButton
   m_TagString: Untagged
@@ -54796,7 +54747,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1243037934}
+      - m_Target: {fileID: 544856760}
         m_TargetAssemblyTypeName: cashEditCtrl, Assembly-CSharp
         m_MethodName: plusBtnClick
         m_Mode: 1
@@ -54846,22 +54797,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1243037929}
   m_CullTransparentMesh: 1
---- !u!114 &1243037934
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1243037929}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a383ed5e3f351c241a1e7c0c525473f3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  myPortfolio: {fileID: 11400000, guid: 833675e2502fa674fb781326cebf2a5d, type: 2}
-  cash: {fileID: 3186287}
-  input_cash: {fileID: 190583878}
-  editedCash: {fileID: 1150605664}
 --- !u!1 &1243544695
 GameObject:
   m_ObjectHideFlags: 0
@@ -54874,7 +54809,6 @@ GameObject:
   - component: {fileID: 1243544699}
   - component: {fileID: 1243544698}
   - component: {fileID: 1243544697}
-  - component: {fileID: 1243544700}
   m_Layer: 5
   m_Name: backButton
   m_TagString: Untagged
@@ -54946,7 +54880,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1243544700}
+      - m_Target: {fileID: 544856755}
         m_TargetAssemblyTypeName: pageCtrl, Assembly-CSharp
         m_MethodName: backBtnClick
         m_Mode: 1
@@ -54996,24 +54930,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1243544695}
   m_CullTransparentMesh: 1
---- !u!114 &1243544700
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1243544695}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 77247922df3cb134aadff057f069d5cd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  setPage: {fileID: 1825698448}
-  optionPage: {fileID: 1042243891}
-  editPage: {fileID: 80808181}
-  profilePage: {fileID: 1487046194}
-  cashEditPage: {fileID: 287853522}
-  popUp: 0
 --- !u!1001 &1243855051
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -56772,7 +56688,6 @@ GameObject:
   - component: {fileID: 1285922605}
   - component: {fileID: 1285922604}
   - component: {fileID: 1285922603}
-  - component: {fileID: 1285922606}
   m_Layer: 5
   m_Name: sellButton
   m_TagString: Untagged
@@ -56844,7 +56759,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1285922606}
+      - m_Target: {fileID: 544856758}
         m_TargetAssemblyTypeName: editCtrl, Assembly-CSharp
         m_MethodName: sellBtnClick
         m_Mode: 1
@@ -56894,23 +56809,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1285922601}
   m_CullTransparentMesh: 1
---- !u!114 &1285922606
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1285922601}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cbaa736739e80304fabbe898162e568c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  myPortfolio: {fileID: 11400000, guid: 833675e2502fa674fb781326cebf2a5d, type: 2}
-  symbol: {fileID: 1178104939}
-  avgCost: {fileID: 599505103}
-  shares: {fileID: 1975363062}
-  date: {fileID: 1868996049}
 --- !u!1 &1287933831
 GameObject:
   m_ObjectHideFlags: 0
@@ -56921,7 +56819,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1287933832}
   - component: {fileID: 1287933833}
-  - component: {fileID: 1287933834}
   m_Layer: 0
   m_Name: weather
   m_TagString: Untagged
@@ -56998,7 +56895,7 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1287933834}
+      - m_Target: {fileID: 544856757}
         m_TargetAssemblyTypeName: toggleCtrl, Assembly-CSharp
         m_MethodName: toggle_weather
         m_Mode: 1
@@ -57011,28 +56908,6 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   m_IsOn: 0
---- !u!114 &1287933834
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1287933831}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e1491fd393936ea47aef2a902918b020, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  stockList: {fileID: 11400000, guid: 50551ee8215caea4180d40a69a925c4f, type: 2}
-  myPortfolio: {fileID: 11400000, guid: 833675e2502fa674fb781326cebf2a5d, type: 2}
-  mystockCk: {fileID: 1923712808}
-  tog0: {fileID: 168479241}
-  weather: {fileID: 1287933833}
-  tog1: {fileID: 292152729}
-  mktime: {fileID: 1523077865}
-  tog2: {fileID: 651698756}
-  scale: {fileID: 1743075502}
-  tog3: {fileID: 1981973562}
 --- !u!1001 &1289733005
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -66998,7 +66873,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1523077863}
   - component: {fileID: 1523077865}
-  - component: {fileID: 1523077864}
   m_Layer: 0
   m_Name: mktime
   m_TagString: Untagged
@@ -67028,28 +66902,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -90}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1523077864
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1523077862}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e1491fd393936ea47aef2a902918b020, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  stockList: {fileID: 11400000, guid: 50551ee8215caea4180d40a69a925c4f, type: 2}
-  myPortfolio: {fileID: 11400000, guid: 833675e2502fa674fb781326cebf2a5d, type: 2}
-  mystockCk: {fileID: 1923712808}
-  tog0: {fileID: 168479241}
-  weather: {fileID: 1287933833}
-  tog1: {fileID: 651698756}
-  mktime: {fileID: 1523077865}
-  tog2: {fileID: 651698756}
-  scale: {fileID: 1743075502}
-  tog3: {fileID: 1981973562}
 --- !u!114 &1523077865
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -67097,7 +66949,7 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1523077864}
+      - m_Target: {fileID: 544856757}
         m_TargetAssemblyTypeName: toggleCtrl, Assembly-CSharp
         m_MethodName: toggle_mktime
         m_Mode: 1
@@ -73337,7 +73189,6 @@ GameObject:
   - component: {fileID: 1688325385}
   - component: {fileID: 1688325384}
   - component: {fileID: 1688325383}
-  - component: {fileID: 1688325386}
   m_Layer: 5
   m_Name: cashEditBtn
   m_TagString: Untagged
@@ -73408,7 +73259,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1688325386}
+      - m_Target: {fileID: 544856759}
         m_TargetAssemblyTypeName: profileCtrl, Assembly-CSharp
         m_MethodName: cashEditBtnClick
         m_Mode: 1
@@ -73458,27 +73309,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1688325381}
   m_CullTransparentMesh: 1
---- !u!114 &1688325386
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1688325381}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6f37df38ad0ce8040a6b49adc398e348, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  setPage: {fileID: 1825698448}
-  optionPage: {fileID: 1042243891}
-  editPage: {fileID: 80808181}
-  profilePage: {fileID: 1487046194}
-  cashEditPage: {fileID: 287853522}
-  myPortfolio: {fileID: 11400000, guid: 833675e2502fa674fb781326cebf2a5d, type: 2}
-  cash: {fileID: 1085910886}
-  invest: {fileID: 886284721}
-  gain: {fileID: 1409494813}
 --- !u!1 &1688814438
 GameObject:
   m_ObjectHideFlags: 0
@@ -76082,7 +75912,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1743075500}
   - component: {fileID: 1743075502}
-  - component: {fileID: 1743075501}
   m_Layer: 0
   m_Name: scaling
   m_TagString: Untagged
@@ -76112,28 +75941,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -220}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1743075501
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1743075499}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e1491fd393936ea47aef2a902918b020, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  stockList: {fileID: 11400000, guid: 50551ee8215caea4180d40a69a925c4f, type: 2}
-  myPortfolio: {fileID: 11400000, guid: 833675e2502fa674fb781326cebf2a5d, type: 2}
-  mystockCk: {fileID: 1923712808}
-  tog0: {fileID: 168479241}
-  weather: {fileID: 1287933833}
-  tog1: {fileID: 292152729}
-  mktime: {fileID: 1523077865}
-  tog2: {fileID: 651698756}
-  scale: {fileID: 1743075502}
-  tog3: {fileID: 1981973562}
 --- !u!114 &1743075502
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -76181,7 +75988,7 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1743075501}
+      - m_Target: {fileID: 544856757}
         m_TargetAssemblyTypeName: toggleCtrl, Assembly-CSharp
         m_MethodName: toggle_scale
         m_Mode: 1
@@ -76206,7 +76013,6 @@ GameObject:
   - component: {fileID: 1743528662}
   - component: {fileID: 1743528661}
   - component: {fileID: 1743528660}
-  - component: {fileID: 1743528663}
   m_Layer: 5
   m_Name: backButton
   m_TagString: Untagged
@@ -76278,7 +76084,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1743528663}
+      - m_Target: {fileID: 544856755}
         m_TargetAssemblyTypeName: pageCtrl, Assembly-CSharp
         m_MethodName: backBtnClick
         m_Mode: 1
@@ -76328,24 +76134,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1743528658}
   m_CullTransparentMesh: 1
---- !u!114 &1743528663
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1743528658}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 77247922df3cb134aadff057f069d5cd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  setPage: {fileID: 1825698448}
-  optionPage: {fileID: 1042243891}
-  editPage: {fileID: 80808181}
-  profilePage: {fileID: 1487046194}
-  cashEditPage: {fileID: 287853522}
-  popUp: 0
 --- !u!1001 &1745991924
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -93239,7 +93027,6 @@ GameObject:
   - component: {fileID: 2110910331}
   - component: {fileID: 2110910330}
   - component: {fileID: 2110910329}
-  - component: {fileID: 2110910332}
   m_Layer: 5
   m_Name: edBtn
   m_TagString: Untagged
@@ -93311,7 +93098,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2110910332}
+      - m_Target: {fileID: 544856755}
         m_TargetAssemblyTypeName: pageCtrl, Assembly-CSharp
         m_MethodName: edBtnClick
         m_Mode: 1
@@ -93361,24 +93148,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2110910327}
   m_CullTransparentMesh: 1
---- !u!114 &2110910332
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2110910327}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 77247922df3cb134aadff057f069d5cd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  setPage: {fileID: 1825698448}
-  optionPage: {fileID: 1042243891}
-  editPage: {fileID: 80808181}
-  profilePage: {fileID: 1487046194}
-  cashEditPage: {fileID: 287853522}
-  popUp: 0
 --- !u!1001 &2111021599
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -14,6 +14,8 @@ public class pageCtrl : MonoBehaviour
     public GameObject cashEditPage;
 
     public bool popUp; //팝업창이 열려있는지 확인
+    //public Button test;
+
     List<GameObject> PageList = new List<GameObject>();
 
     void Start()
@@ -24,6 +26,8 @@ public class pageCtrl : MonoBehaviour
         PageList.Add(editPage);
         PageList.Add(profilePage);
         PageList.Add(cashEditPage);
+
+        //test.onClick.AddListener(()=>setButtonClick());
     }
     public void setButtonClick()
     {
