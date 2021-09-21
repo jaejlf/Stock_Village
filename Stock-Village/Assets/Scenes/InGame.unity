@@ -96560,7 +96560,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uC218\uC775\uAE08 ?"
+  m_Text: '-'
 --- !u!222 &2138951618
 CanvasRenderer:
   m_ObjectHideFlags: 0
