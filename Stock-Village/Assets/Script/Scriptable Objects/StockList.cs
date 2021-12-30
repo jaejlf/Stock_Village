@@ -6,6 +6,9 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "StockList")]
 public class StockList : ScriptableObject
 {
+    //주식시장의 공포와 탐욕지수
+    public int fearAndGreed;
+
     //종목코드와 얻은 api 자료를 저장한 딕셔너리
     public Dictionary<string, APIData> apiInfo = new Dictionary<string, APIData>();
     public class APIData //API에서 불러온 데이터 return 하기 위한 클래스
